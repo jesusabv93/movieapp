@@ -1,5 +1,6 @@
 package com.jesusabv93.movieapp.ui.movies
 
+import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jesusabv93.data.repositories.MovieResult
@@ -23,6 +24,8 @@ class MoviesViewModel @Inject constructor(
 
     private val _state = MutableStateFlow(UiState())
     val state: StateFlow<UiState> = _state.asStateFlow()
+
+    val items = ObservableField<List<Movie>>()
 
     init {
         refresh()

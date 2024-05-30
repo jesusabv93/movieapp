@@ -1,7 +1,6 @@
 package com.jesusabv93.movieapp.ui.detail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.bold
@@ -48,7 +47,6 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
     private fun showMovie(movie: Movie) {
-        Log.e("MovieDetailActivity", "showMovie: $movie", )
         binding.toolbar.title = movie.title
         binding.ivPoster.loadUrl(movie.backdrop)
         binding.tvMovieDetails.text = buildSpannedString {
