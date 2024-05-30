@@ -79,6 +79,9 @@ dependencies {
 
     implementation(libs.arrow.core)
 
+    implementation(libs.glide.glide)
+    kapt(libs.glide.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
