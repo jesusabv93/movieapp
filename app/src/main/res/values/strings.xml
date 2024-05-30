@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">MovieApp</string>
+    <string name="app_name">Indra Movie App</string>
+    <string name="auth_label_username">Username</string>
+    <string name="auth_label_password">Password</string>
+    <string name="auth_button_login">Login</string>
+    <string name="auth_default_username">Admin</string>
+    <string name="auth_default_password">Password*123</string>
 </resources>
