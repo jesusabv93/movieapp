@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -15,6 +17,13 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        val properties = Properties()
+        properties.load(project.rootProject.file("local.properties").reader())
+        val apiKey: String = properties.getProperty("ApiKey")
+        val baseUrl: String = properties.getProperty("BaseUrl")
+        buildConfigField("String", "ApiKey", "\"$apiKey\"")
+        buildConfigField("String", "BaseUrl", "\"$baseUrl\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -59,6 +68,19 @@ dependencies {
 
     implementation(libs.hilt.core)
     kapt(libs.hilt.compiler)
+
+    implementation(libs.retrofit.retrofit)
+    implementation(libs.retrofit.converterGson)
+    implementation(libs.okhttp3.loginInterceptor)
+
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+
+    implementation(libs.arrow.core)
+
+    implementation(libs.glide.glide)
+    kapt(libs.glide.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
