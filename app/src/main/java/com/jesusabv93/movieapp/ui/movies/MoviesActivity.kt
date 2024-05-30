@@ -52,7 +52,7 @@ class MoviesActivity : AppCompatActivity() {
     private fun navigateTo(movie: Movie) {
         viewModel.onNavigateDone()
         startActivity(Intent(this, MovieDetailActivity::class.java).apply {
-            //putExtra(MovieDetailActivity.MOVIE_ID, movie.id)
+            putExtra(MovieDetailActivity.MOVIE_ID, movie.id)
         })
     }
 
