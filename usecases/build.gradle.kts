@@ -9,6 +9,7 @@ java {
 }
 
 dependencies {
+    implementation(project(":data"))
     implementation(project(":domain"))
     implementation(libs.coroutines.core)
     implementation(libs.java.inject)

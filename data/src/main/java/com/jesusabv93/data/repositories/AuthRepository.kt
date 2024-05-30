@@ -1,8 +1,9 @@
 package com.jesusabv93.data.repositories
 
 import com.jesusabv93.data.datasources.AuthRemoteDataSource
+import javax.inject.Inject
 
-class AuthRepository (
+class AuthRepository @Inject constructor(
     private val authRemoteDataSource: AuthRemoteDataSource,
 ) {
 
